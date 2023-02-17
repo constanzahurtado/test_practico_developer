@@ -1,0 +1,38 @@
+{% extends 'App/layout.html' %}
+{% block content %}
+
+<br>
+<h3>Station Data</h3>
+<br>
+<a href="/">Volver al inicio</a>
+
+    {{ network_station.name_network }}
+
+<hr>
+
+<table class = "table table-striped align-middle">
+    <tr>
+        <th>Id</th><th>Name</th><th>Adress</th><th>Payment Station</th><th>Empty Slots Station</th><th>Slots Station</th>
+        <th>Empty Slots Station</th><th>Renting Station</th><th>Returning Station</th><th>Normal Bikes Station</th>
+        <th>Free Bikes Station</th><th>Ebikes Station</th>
+    </tr>
+
+{% for s in station %}
+    <tr>
+        <td>{{ s.id_station }}</td>
+        <td>{{ s.name_station }}</td>
+        <td>{{ s.adress_station }}</td>
+        <td>{{ s.payment_station }}</td>
+        <td>{{ s.empty_slots_station }}</td>
+        <td>{{ s.slots_station }}</td>
+        <td>{{ s.empty_slots_station }}</td>
+        <td>{{ s.renting_station }}</td>
+        <td>{{ s.returning_station }}</td>
+        <td>{{ s.normal_bikes_station }}</td>
+        <td>{{ s.free_bikes_station }}</td>
+        <td>{{ s.ebikes_station }}</td>
+    </tr>   
+{% endfor %}
+</table>
+
+{% endblock %}
